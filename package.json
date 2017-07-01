@@ -1,0 +1,16 @@
+{
+  "name": "colors-shapes",
+  "version": "1.0.0",
+  "description": "html5 mocks for colors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sri",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.2"
+  }
+}

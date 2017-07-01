@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors & Shapes</title>
+    <link rel="stylesheet" href="assets/lib/css/bootstrap.css" />
+    <link href="https://fonts.googleapis.com/css?family=Abel|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="dist/styles/app.css" />
+</head>
+<body onload="onAppLoad()">
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col-xs-12">
+             <h2 class="text-center main-header">
+                 Taste the colours
+             </h2>
+            <button type="button" class="btn btn-danger edit-button" onclick="editContent()">Change Content</button>
+        </div>
+        <div class="col-xs-12 col-sm-12 content">
+            <div class="color-box animated zoomIn" id="colours">
+                <figure>
+                <img src="assets/images/red-spoon.jpg" onclick="openModal(event)" alt="red-sppon" /></figure>
+                <div class="color-content">
+                    <h4>Red</h4>
+                    <p id="red-content">Red foods remind us of berries and soft fruits, so we anticipate a soft taste.</p>
+                </div>
+            </div>
+            <div class="color-box animated zoomIn">
+                <figure>
+                <img src="assets/images/green-spoon.jpg" onclick="openModal(event)" alt="green-sppon" /></figure>
+                <div class="color-content">
+                    <h4>Green</h4>
+                    <p id="green-content">Fresg, zingy green colors are reminiscent of unripe fruit, promising sour or acid flavours</p>
+                </div>
+            </div>
+            <div class="color-box animated zoomIn">
+                <figure><img src="assets/images/white-spoon.jpg" onclick="openModal(event)" alt="white-sppon" /></figure>
+                <div class="color-content">
+                    <h4>White</h4>
+                    <p id="white-content"> White food evoke memories of salt and salty flavours, driving the expectation of a savoury treat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 content second-block">
+            <div class="col-xs-12 col-sm-8 side-panel" id="sidePanel">
+                <div class="col-xs-12 col-sm-6 zero-padding animated" id="inLeft">
+                    <figure >
+                        <a href="#" onclick="redirectToPage(event)">
+                    <img class="img-responsive" src="assets/images/bowl.jpg" alt="food plate image"/></a></figure>
+                </div>
+                <div class="col-sm-6 col-xs-12 animated">
+                    <figure class="animated" id="outLeft">
+                        <a href="#" onclick="redirectToPage(event)">
+                    <img class="img-responsive" src="assets/images/food-withmobile.jpg" alt="mobile image" /></a></figure>
+                    <figure class="animated" id="outLeftAnimate">
+                        <a href="#" onclick="redirectToPage(event)">
+                        <img class="img-responsive" src="assets/images/carrot.jpg" alt="carrot image" />
+                        </a>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 animated" id="side-panel-right">
+                <article>
+                    <h2>
+                        Taste: A Five-Sense Experience
+                    </h2>
+                    <p id="experience-content">
+                        Our visual senses provide up to 28% of our taste experience.This is a theory instagram chef Jacques la Merde takes to the extreme. Serving up exquisite tasting plates in fact made from gas station ingerdients to her thousands of followers, she demonstartes how visual techniquse affet our perception of food.
+                    </p>
+                    <h4 class="compliment">FOOD that looks its best</h4>
+                    <p id="compliment-content">Enhance the flavour of your food by using a variety of colours and shapes to entice the eyes</p>
+
+                </article>
+            </div>
+
+        </div>
+    </div>
+    <div class="row " id="contentTextrea">
+        <div class="col-xs-12 animated">
+            <div class="col-xs-12 col-sm-4">
+                <h4 class="col-xs-12">Red Content</h4>
+                <textarea class="form-control" id="red-text" rows="5">Red foods remind us of berries and soft fruits, so we anticipate a soft taste.
+                </textarea>
+                <button type="button" class="btn btn-content" onclick="changeContent('red-text', 'red-content', 'colours')">Change Content</button>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <h4 class="col-xs-12">Green Content</h4>
+                <textarea class="form-control" id="green-text" rows="5">Fresg, zingy green colors are reminiscent of unripe fruit, promising sour or acid flavours
+                </textarea>
+                <button type="button" class="btn btn-content" onclick="changeContent('green-text', 'green-content', 'colours')">Change Content</button>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <h4 class="col-xs-12">White Content</h4>
+                <textarea class="form-control" id="white-text" rows="5">White food evoke memories of salt and salty flavours, driving the expectation of a savoury treat.
+                </textarea>
+                <button type="button" class="btn btn-content" onclick="changeContent('white-text', 'white-content', 'colours')">Change Content</button>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <h4 class="col-xs-12">Experience Content</h4>
+                <textarea class="form-control" id="experience-text" rows="5">Fresg, zingy green colors are reminiscent of unripe fruit, promising sour or acid flavours
+                </textarea>
+                <button type="button" class="btn btn-content" onclick="changeContent('experience-text', 'experience-content', 'side-panel-right')">Change Content</button>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <h4 class="col-xs-12">Compliment Content</h4>
+                <textarea class="form-control" id="compliment-text" rows="5">White food evoke memories of salt and salty flavours, driving the expectation of a savoury treat.
+                </textarea>
+                <button type="button" class="btn btn-content" onclick="changeContent('compliment-text', 'compliment-content', 'side-panel-right')">Change Content</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop" id="modal-backdrop" style="display: none"></div>
+<div  class="modal fade show-modal" id="modal" role="dialog" style="display: none">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" onclick="closeModal()" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <figure>
+                <img id="modal-image" src="" /></figure>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="src/scripts/script.js"></script>
+</body>
+</html>
